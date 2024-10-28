@@ -1,0 +1,234 @@
+# GOOP: Genomic Data Processing and Analysis Pipeline
+
+**GOOP** is a comprehensive pipeline for downloading, processing, and analyzing genomic data. It automates the steps of genome retrieval, gene prediction, BLAST searches, Gene Ontology (GO) term processing, and visualization through heatmaps.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Dependencies](#dependencies)
+  - [Python Packages](#python-packages)
+  - [External Tools](#external-tools)
+- [Installation](#installation)
+  - [Python Environment Setup](#python-environment-setup)
+  - [Installing External Tools](#installing-external-tools)
+- [Usage](#usage)
+- [Example Command](#example-command)
+- [License](#license)
+
+## Overview
+
+The pipeline performs the following steps:
+
+1. **Download and Rename Genomes**: Retrieves genome assemblies based on provided accession numbers and renames them for consistency.
+2. **Process with Prodigal**: Unzips, linearizes, and predicts genes using Prodigal.
+3. **Download UniProt Data**: Retrieves protein sequences and annotations from UniProt based on Taxonomy ID and optional GO terms.
+4. **Run BLAST**: Creates a BLAST database and runs BLASTX to find homologous proteins.
+5. **Process BLAST Results**: Matches BLAST results with GO terms and generates summary CSV files.
+6. **Comparison and Visualization**: Compares GO terms between datasets and generates heatmaps for visualization.
+
+## Dependencies
+
+### Python Packages
+
+- Python 3.6 or higher
+- `argparse`
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+- `goatools`
+- `requests`
+- `Biopython` (optional, for advanced FASTA handling)
+
+### External Tools
+
+- **Prodigal**: Gene prediction tool.
+
+  - Website: [Prodigal](https://github.com/hyattpd/Prodigal)
+  - Version: 2.6.3 or higher
+
+- **NCBI BLAST+**: Sequence alignment tool suite.
+
+  - Website: [NCBI BLAST+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
+  - Tools Used: `makeblastdb`, `blastx`
+  - Version: 2.10.0 or higher
+
+- **Entrez Direct (EDirect)**: Command-line tool for accessing NCBI's databases.
+
+  - Installation Instructions: [EDirect Documentation](https://www.ncbi.nlm.nih.gov/books/NBK179288/)
+  - Tools Used: `esearch`, `esummary`, `xtract`
+
+- **wget**: Network downloader for retrieving files from the web.
+
+  - Installation: Available in most package managers (`apt`, `yum`, `brew`, etc.)
+
+## Installation
+
+### Python Environment Setup
+
+It's recommended to use a virtual environment to manage the Python packages.
+
+1. **Create a Virtual Environment**
+
+   ```bash
+   python3 -m venv goop_env
+   ```
+
+2. **Activate the Virtual Environment**
+
+   - On Linux/macOS:
+
+     ```bash
+     source goop_env/bin/activate
+     ```
+
+   - On Windows:
+
+     ```bash
+     goop_env\Scripts\activate
+     ```
+
+3. **Upgrade `pip`**
+
+   ```bash
+   pip install --upgrade pip
+   ```
+
+4. **Install Python Packages**
+
+   ```bash
+   pip install pandas numpy matplotlib seaborn goatools requests biopython
+   ```
+
+### Installing External Tools
+
+#### Prodigal
+
+1. **Download Prodigal**
+
+   ```bash
+   wget https://github.com/hyattpd/Prodigal/releases/download/v2.6.3/prodigal.linux
+   ```
+
+2. **Make the Binary Executable**
+
+   ```bash
+   chmod +x prodigal.linux
+   ```
+
+3. **Move to a Directory in PATH**
+
+   ```bash
+   sudo mv prodigal.linux /usr/local/bin/prodigal
+   ```
+
+#### NCBI BLAST+
+
+1. **Download BLAST+**
+
+   - Visit the [NCBI BLAST+ Download Page](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/) and download the appropriate package for your operating system.
+
+2. **Extract and Install**
+
+   ```bash
+   tar -xzf ncbi-blast-*.tar.gz
+   sudo cp ncbi-blast-*/bin/* /usr/local/bin/
+   ```
+
+#### Entrez Direct (EDirect)
+
+1. **Install EDirect**
+
+   ```bash
+   sh -c "$(curl -fsSL https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"
+   ```
+
+2. **Update PATH Environment Variable**
+
+   ```bash
+   export PATH=${PATH}:${HOME}/edirect
+   ```
+
+   - Add the above line to your `~/.bashrc` or `~/.bash_profile` to make it permanent.
+
+#### wget
+
+- **Install via Package Manager**
+
+  - On Ubuntu/Debian:
+
+    ```bash
+    sudo apt-get install wget
+    ```
+
+  - On CentOS/RHEL:
+
+    ```bash
+    sudo yum install wget
+    ```
+
+  - On macOS (with Homebrew):
+
+    ```bash
+    brew install wget
+    ```
+
+## Usage
+
+```bash
+python GOOP.py -i <input_csv> -p <path_to_prodigal> -m <path_to_makeblastdb> -b <path_to_blastx> -d <taxid> -g <go_term> --filtering-go <go_term> -t <threads>
+```
+
+### Required Arguments
+
+- `-i`, `--input`: Path to the input CSV file containing genome accession numbers and names.
+- `-p`, `--prodigal`: Path to the Prodigal executable.
+- `-m`, `--makeblastdb`: Path to the `makeblastdb` command.
+- `-b`, `--blastx`: Path to the `blastx` command.
+- `-d`, `--taxid`: Taxonomy ID for the organism (e.g., `194` for *Campylobacter*).
+- `--filtering-go`: GO term to be used for filtering (without the "GO:" prefix).
+- `-t`, `--threads`: Number of threads to use for BLASTX (default: `24`).
+
+### Optional Arguments
+
+- `-g`, `--go`: GO term to filter the UniProt TSV download (without "GO:" prefix).
+- `--uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading.
+- `--uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading.
+- `--obo-file`: Path to a local OBO file to use instead of downloading.
+- `--process-folder`: Path to an additional folder containing genome files to process.
+- `--process-folder-taxid`: Taxonomy ID for the organism in the process folder.
+- `--process-folder-go`: GO term for the process folder.
+- `--process-folder-uniprot-fasta`: Path to a local UniProt FASTA file for the process folder.
+- `--process-folder-uniprot-tsv`: Path to a local UniProt TSV file for the process folder.
+
+## Example Command
+
+```bash
+python GOOP.py \
+  -i genomes_list.csv \
+  -p /usr/local/bin/prodigal \
+  -m /usr/local/bin/makeblastdb \
+  -b /usr/local/bin/blastx \
+  -d 194 \
+  -g 0005975 \
+  --filtering-go 0005975 \
+  -t 24 \
+  --uniprot-fasta uniprot_194_proteins.fasta \
+  --uniprot-tsv uniprot_194_proteins.tsv \
+  --obo-file go-basic.obo \
+  --process-folder query_genomes \
+  --process-folder-taxid 83333 \
+  --process-folder-go 0005975 \
+  --process-folder-uniprot-fasta uniprot_83333_proteins.fasta \
+  --process-folder-uniprot-tsv uniprot_83333_proteins.tsv
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Note:** Ensure all external tools are accessible from your `PATH` environment variable or provide the full paths to their executables when running the script.
+
+If you encounter any issues or have questions, please open an issue on the repository or contact the maintainer.
