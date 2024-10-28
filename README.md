@@ -181,21 +181,21 @@ It's recommended to use a virtual environment to manage the Python packages.
 
 - `-i`, `--input`: Path to the input CSV file containing genome accession numbers and names.
 - `-p`, `--prodigal`: Path to the Prodigal executable.
+- `-d`, `--taxid`: Taxonomy ID for the organism (e.g., `194` for *Campylobacter*).
+- `-g`, `--go`: GO term to filter the UniProt TSV download (without "GO:" prefix).
+- `--filtering-go`: GO term to be used for filtering (without the "GO:" prefix).
 - `-m`, `--makeblastdb`: Path to the `makeblastdb` command.
 - `-b`, `--blastx`: Path to the `blastx` command.
-- `-d`, `--taxid`: Taxonomy ID for the organism (e.g., `194` for *Campylobacter*).
-- `--filtering-go`: GO term to be used for filtering (without the "GO:" prefix).
 - `-t`, `--threads`: Number of threads to use for BLASTX (default: `24`).
-
-### Optional Arguments
-
-- `-g`, `--go`: GO term to filter the UniProt TSV download (without "GO:" prefix).
-- `--uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading.
-- `--uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading.
-- `--obo-file`: Path to a local OBO file to use instead of downloading.
 - `--process-folder`: Path to an additional folder containing genome files to process.
 - `--process-folder-taxid`: Taxonomy ID for the organism in the process folder.
 - `--process-folder-go`: GO term for the process folder.
+  
+### Optional Arguments
+
+- `--uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading.
+- `--uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading.
+- `--obo-file`: Path to a local OBO file to use instead of downloading.
 - `--process-folder-uniprot-fasta`: Path to a local UniProt FASTA file for the process folder.
 - `--process-folder-uniprot-tsv`: Path to a local UniProt TSV file for the process folder.
 
