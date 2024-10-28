@@ -177,10 +177,6 @@ It's recommended to use a virtual environment to manage the Python packages.
 
 ## Usage
 
-```bash
-python GOOP.py -i <input_csv> -p <path_to_prodigal> -m <path_to_makeblastdb> -b <path_to_blastx> -d <taxid> -g <go_term> --filtering-go <go_term> -t <threads>
-```
-
 ### Required Arguments
 
 - `-i`, `--input`: Path to the input CSV file containing genome accession numbers and names.
