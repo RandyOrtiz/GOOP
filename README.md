@@ -213,7 +213,7 @@ It's recommended to use a virtual environment to manage the Python packages.
 ## Examples
 
 ## Sample GOOP Runs with:
-1. remote subject
+1. remote subject (will download subject genomes from NCBI)
 2. local query
 3. remote UniProt databases (will download databases from UniProt)
 
@@ -232,7 +232,7 @@ python GOOP.py \
     --threads 24
 ```
 
-1. remote subject
+1. remote subject (will download subject genomes from NCBI)
 2. local query
 3. local UniProt databases
 
