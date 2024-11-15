@@ -13,7 +13,7 @@ Gene Ontology (GO) analysis serves as a foundational tool in bioinformatics for 
 - [Installation](#installation)
   - [Python Environment Setup](#python-environment-setup)
   - [Installing External Tools](#installing-external-tools)
-- [Results](#sample-results)
+- [Sample Results](#sample-results)
 - [Usage](#usage)
 - [Example Command](#examples)
 - [License](#license)
