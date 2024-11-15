@@ -206,11 +206,10 @@ It's recommended to use a virtual environment to manage the Python packages.
 
 ## Examples
 
-## Sample GOOP Run with:
+## Sample GOOP Runs with:
 1. remote subject
 2. local query
-3. remote UniProt databases
-4. ...Also can be used to test GOOP installation...
+3. remote UniProt databases (will download databases from UniProt)
 
 ```bash
 python GOOP.py \
@@ -227,7 +226,9 @@ python GOOP.py \
     --threads 24
 ```
 
-## Sample GOOP run with remote subject, local query, and local UniProt databases.
+1. remote subject
+2. local query
+3. local UniProt databases
 
 ```bash
 python GOOP.py \
