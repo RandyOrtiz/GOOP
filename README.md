@@ -14,7 +14,7 @@ Gene Ontology (GO) analysis serves as a foundational tool in bioinformatics for 
   - [Python Environment Setup](#python-environment-setup)
   - [Installing External Tools](#installing-external-tools)
 - [Usage](#usage)
-- [Example Command](#example-command)
+- [Example Command](#examples)
 - [License](#license)
 
 ## Overview
@@ -198,6 +198,8 @@ It's recommended to use a virtual environment to manage the Python packages.
 - `--obo-file`: Path to a local OBO file to use instead of downloading.
 - `--process-folder-uniprot-fasta`: Path to a local UniProt FASTA file for the process folder.
 - `--process-folder-uniprot-tsv`: Path to a local UniProt TSV file for the process folder.
+
+## Examples
 
 ## Sample GOOP Run with remote subject, local query, and remote UniProt databases. Also can be used to test GOOP installation.
 
