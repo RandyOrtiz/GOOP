@@ -184,7 +184,7 @@ It's recommended to use a virtual environment to manage the Python packages.
 
 ### Arguments
 
-1. Subject Genomes (choose -c or -s)
+- Subject Genomes (choose -c or -s)
   - `-c`, `--bvbrc-csv`: Path to the input BV-BRC CSV file containing genome accession numbers (this will download genomes from the NCBI database)
   - `-s`, `--subject-genomes-folder`: Path to folder containing subject genomes
 2. Subject Information (choose -st and -sg; or else choose -sc)
