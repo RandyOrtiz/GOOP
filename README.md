@@ -184,8 +184,8 @@ It's recommended to use a virtual environment to manage the Python packages.
 
 ### Arguments (choose a or b)
 
-1a- `-c`, `--bvbrc-csv`: Path to the input BV-BRC CSV file containing genome accession numbers (this will download genomes from the NCBI database)
-1b- `-s`, `--subject-genomes-folder`: Path to folder containing subject genomes
+- 1a `-c`, `--bvbrc-csv`: Path to the input BV-BRC CSV file containing genome accession numbers (this will download genomes from the NCBI database)
+- 1b `-s`, `--subject-genomes-folder`: Path to folder containing subject genomes
 
 2a- `-st`, `--subject-genomes-taxid`: Taxonomy ID for the subject organism (e.g., `194` for *Campylobacter*)
 2a- `-sg`, `--subject-genomes-go`: GO term to filter the subject organism (without "GO:" prefix)
