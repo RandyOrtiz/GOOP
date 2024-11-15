@@ -13,6 +13,7 @@ Gene Ontology (GO) analysis serves as a foundational tool in bioinformatics for 
 - [Installation](#installation)
   - [Python Environment Setup](#python-environment-setup)
   - [Installing External Tools](#installing-external-tools)
+- [Results](#sample-results)
 - [Usage](#usage)
 - [Example Command](#examples)
 - [License](#license)
@@ -174,6 +175,10 @@ It's recommended to use a virtual environment to manage the Python packages.
     ```bash
     brew install wget
     ```
+
+## Sample Results
+
+![image](https://github.com/user-attachments/assets/4389ab9e-dfb1-459c-b0df-f17a15330c2f)
 
 ## Usage
 
