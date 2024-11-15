@@ -187,25 +187,25 @@ It's recommended to use a virtual environment to manage the Python packages.
 - 1a `-c`, `--bvbrc-csv`: Path to the input BV-BRC CSV file containing genome accession numbers (this will download genomes from the NCBI database)
 - 1b `-s`, `--subject-genomes-folder`: Path to folder containing subject genomes
 
-2a- `-st`, `--subject-genomes-taxid`: Taxonomy ID for the subject organism (e.g., `194` for *Campylobacter*)
-2a- `-sg`, `--subject-genomes-go`: GO term to filter the subject organism (without "GO:" prefix)
-2b- `-sc`, `--subject-folder-complete`: Subject folder already complete, skip subject processing steps (must choose 1b as well)
+- 2a `-st`, `--subject-genomes-taxid`: Taxonomy ID for the subject organism (e.g., `194` for *Campylobacter*)
+- 2a `-sg`, `--subject-genomes-go`: GO term to filter the subject organism (without "GO:" prefix)
+- 2b `-sc`, `--subject-folder-complete`: Subject folder already complete, skip subject processing steps (must choose 1b as well)
 
-3- `-q`, `--query-genomes-folder`: Path to folder containing query genomes
+- 3 `-q`, `--query-genomes-folder`: Path to folder containing query genomes
 
-4a- `-qt`, `--query-genomes-taxid`: Taxonomy ID for the query organism (e.g., `194` for *Campylobacter*)
-4a- `-qg`, `--query-genomes-go`: GO term to filter the query organism (without "GO:" prefix)
-4b- `-sq`, `--query-folder-complete`: Query folder already complete, skip subject processing steps
+- 4a `-qt`, `--query-genomes-taxid`: Taxonomy ID for the query organism (e.g., `194` for *Campylobacter*)
+- 4a `-qg`, `--query-genomes-go`: GO term to filter the query organism (without "GO:" prefix)
+- 4b `-sq`, `--query-folder-complete`: Query folder already complete, skip subject processing steps
 
-5- `-f`, `--comparison-go`: GO term to be used for filtering both query and subject (without the "GO:" prefix)
+- 5 `-f`, `--comparison-go`: GO term to be used for filtering both query and subject (without the "GO:" prefix)
 
-6- `-p`, `--prodigal`: Path to the `prodigal` command
+- 6 `-p`, `--prodigal`: Path to the `prodigal` command
 
-7- `-m`, `--makeblastdb`: Path to the `makeblastdb` command
+- 7 `-m`, `--makeblastdb`: Path to the `makeblastdb` command
 
-8- `-b`, `--blastx`: Path to the `blastx` command
+- 8 `-b`, `--blastx`: Path to the `blastx` command
 
-9- `-t`, `--threads`: Number of threads to use for BLASTX (default: `24`).
+- 9 `-t`, `--threads`: Number of threads to use for BLASTX (default: `24`).
   
 ### Optional Arguments
 
