@@ -206,7 +206,11 @@ It's recommended to use a virtual environment to manage the Python packages.
 
 ## Examples
 
-## Sample GOOP Run with remote subject, local query, and remote UniProt databases. Also can be used to test GOOP installation.
+## Sample GOOP Run with:
+1. remote subject
+2. local query
+3. remote UniProt databases
+4. ...Also can be used to test GOOP installation...
 
 ```bash
 python GOOP.py \
@@ -217,7 +221,7 @@ python GOOP.py \
     --query-genomes-taxid 194 \
     --query-genomes-go 0008150 \
     --comparison-go 0044238 \
-    --prodigal /path_to_prodigal_command/prodigal.linux \
+    --prodigal /path_to_prodigal_command/prodigal \
     --makeblastdb /path_to_ncbi_blast_makeblastdb_command/makeblastdb \
     --blastx /path_to_blastx_command/blastx \
     --threads 24
