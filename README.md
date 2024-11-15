@@ -182,39 +182,33 @@ It's recommended to use a virtual environment to manage the Python packages.
 
 ## Usage
 
-### Arguments (choose a or b)
+### Arguments
 
-1. Subject
-  a. `-c`, `--bvbrc-csv`: Path to the input BV-BRC CSV file containing genome accession numbers (this will download genomes from the NCBI database)
-  b. `-s`, `--subject-genomes-folder`: Path to folder containing subject genomes
-2.
-- 2a `-st`, `--subject-genomes-taxid`: Taxonomy ID for the subject organism (e.g., `194` for *Campylobacter*)
-- 2a `-sg`, `--subject-genomes-go`: GO term to filter the subject organism (without "GO:" prefix)
-- 2b `-sc`, `--subject-folder-complete`: Subject folder already complete, skip subject processing steps (must choose 1b as well)
-
-- 3 `-q`, `--query-genomes-folder`: Path to folder containing query genomes
-
-- 4a `-qt`, `--query-genomes-taxid`: Taxonomy ID for the query organism (e.g., `194` for *Campylobacter*)
-- 4a `-qg`, `--query-genomes-go`: GO term to filter the query organism (without "GO:" prefix)
-- 4b `-sq`, `--query-folder-complete`: Query folder already complete, skip subject processing steps
-
-- 5 `-f`, `--comparison-go`: GO term to be used for filtering both query and subject (without the "GO:" prefix)
-
-- 6 `-p`, `--prodigal`: Path to the `prodigal` command
-
-- 7 `-m`, `--makeblastdb`: Path to the `makeblastdb` command
-
-- 8 `-b`, `--blastx`: Path to the `blastx` command
-
-- 9 `-t`, `--threads`: Number of threads to use for BLASTX (default: `24`).
-  
-### Optional Arguments
-
-- `-sf`, `--subject-uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading
-- `-sv`, `--subject-uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading
-- `-qf`, `--query-uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading
-- `-qv`, `--query-uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading
-- `-o`, `--obo-file`: Path to a local OBO file to use instead of downloading
+1. Subject Genomes (choose -c or -s)
+  - `-c`, `--bvbrc-csv`: Path to the input BV-BRC CSV file containing genome accession numbers (this will download genomes from the NCBI database)
+  - `-s`, `--subject-genomes-folder`: Path to folder containing subject genomes
+2. Subject Information (choose -st and -sg; or else choose -sc)
+  - `-st`, `--subject-genomes-taxid`: Taxonomy ID for the subject organism (e.g., `194` for *Campylobacter*)
+  - `-sg`, `--subject-genomes-go`: GO term to filter the subject organism (without "GO:" prefix)
+  - `-sc`, `--subject-folder-complete`: Subject folder already complete, skip subject processing steps (must choose 1b as well)
+3. Query Genomes
+  - `-q`, `--query-genomes-folder`: Path to folder containing query genomes
+4. Query Information (choose -qt and -qg; or else choose -qc)
+  - `-qt`, `--query-genomes-taxid`: Taxonomy ID for the query organism (e.g., `194` for *Campylobacter*)
+  - `-qg`, `--query-genomes-go`: GO term to filter the query organism (without "GO:" prefix)
+  - `-qc`, `--query-folder-complete`: Query folder already complete, skip subject processing steps
+5. Other Mandatory Arguments
+  - `-f`, `--comparison-go`: GO term to be used for filtering both query and subject (without the "GO:" prefix)
+  - `-p`, `--prodigal`: Path to the `prodigal` command
+  - `-m`, `--makeblastdb`: Path to the `makeblastdb` command
+  - `-b`, `--blastx`: Path to the `blastx` command
+  - `-t`, `--threads`: Number of threads to use for BLASTX (default: `24`).
+6. Other Optional Arguments (to avoid downloads)
+  - `-sf`, `--subject-uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading
+  - `-sv`, `--subject-uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading
+  - `-qf`, `--query-uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading
+  - `-qv`, `--query-uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading
+  - `-o`, `--obo-file`: Path to a local OBO file to use instead of downloading
 
 ## Examples
 
