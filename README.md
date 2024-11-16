@@ -258,7 +258,6 @@ python GOOP.py \
 
 1. complete subject folder
 2. complete query folder
-3. local UniProt databases
 
 ```bash
 python GOOP.py \
