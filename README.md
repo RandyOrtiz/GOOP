@@ -190,13 +190,13 @@ It's recommended to use a virtual environment to manage the Python packages.
 - Subject Information (choose -st and -sg; or else choose -sc)
   - `-st`, `--subject-genomes-taxid`: Taxonomy ID for the subject organism (e.g., `194` for *Campylobacter*)
   - `-sg`, `--subject-genomes-go`: GO term to filter the subject organism (without "GO:" prefix)
-  - `-sc`, `--subject-folder-complete`: Subject folder already complete, skip subject processing steps (must choose 1b as well)
+  - `-sc`, `--subject-folder-complete`: Subject folder already has been run with GOOP, skip subject processing steps (must choose 1b as well)
 - Query Genomes
   - `-q`, `--query-genomes-folder`: Path to folder containing query genomes
 - Query Information (choose -qt and -qg; or else choose -qc)
   - `-qt`, `--query-genomes-taxid`: Taxonomy ID for the query organism (e.g., `194` for *Campylobacter*)
   - `-qg`, `--query-genomes-go`: GO term to filter the query organism (without "GO:" prefix)
-  - `-qc`, `--query-folder-complete`: Query folder already complete, skip subject processing steps
+  - `-qc`, `--query-folder-complete`: Query folder already has been run with GOOP, skip subject processing steps
 - Other Mandatory Arguments
   - `-f`, `--comparison-go`: GO term to be used for filtering both query and subject (without the "GO:" prefix)
   - `-p`, `--prodigal`: Path to the `prodigal` command
@@ -256,8 +256,8 @@ python GOOP.py \
     --obo-file /path_to_obo_file/go-basic.obo
 ```
 
-1. complete subject folder
-2. complete query folder
+1. Subject folder has been run with GOOP
+2. Query folder has been run with GOOP
 
 ```bash
 python GOOP.py \
