@@ -209,6 +209,12 @@ It's recommended to use a virtual environment to manage the Python packages.
   - `-qf`, `--query-uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading
   - `-qv`, `--query-uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading
   - `-o`, `--obo-file`: Path to a local OBO file to use instead of downloading
+- Other Optional Modes
+  - `--metagenome`: Use this if your genome comparison is metagenome v metagenome
+  - `-d`, `--diamond`: Path to the `diamond` command
+  - `--use-diamond`:Use DIAMOND instead of BLASTX
+  - `-mm`, `--mmseqs`: Path to the `mmseqs2` command
+  - `--use-mmseqs`: Use MMseqs2 instead of BLASTX
 
 ## Examples
 
