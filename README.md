@@ -210,7 +210,8 @@ It's recommended to use a virtual environment to manage the Python packages.
   - `-qv`, `--query-uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading
   - `-o`, `--obo-file`: Path to a local OBO file to use instead of downloading
 - Other Optional Modes
-  - `--metagenome`: Use this if your genome comparison is metagenome v metagenome
+  - `--metagenome-subject`: Use this if your subject genomes are metagenome (prodigal -p meta)
+  - `--metagenome-query`: Use this if your query genomes are metagenome (prodigal -p meta)
   - `-d`, `--diamond`: Path to the `diamond` command
   - `--use-diamond`:Use DIAMOND instead of BLASTX
   - `-mm`, `--mmseqs`: Path to the `mmseqs2` command
