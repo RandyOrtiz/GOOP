@@ -232,28 +232,42 @@ python GOOP.py \
     --threads 24
 ```
 
-1. remote subject (will download subject genomes from NCBI)
+1. local subject
 2. local query
 3. local UniProt databases
 
 ```bash
 python GOOP.py \
-    -i /path_to_subject_BVBRC_genome_tsv_file/BVBRC_test.csv \
-    -p /path_to_prodigal_command/prodigal.linux \
-    -d 194 \ # taxid of subject
-    -g 0005975 \ # outer GO id of interest in subject
-    --filtering-go 0044238 \ # inner GO id of interest in analysis
-    -m /path_to_ncbi_blast_makeblastdb_command/makeblastdb \
-    -b /path_to_blastx_command/blastx \
-    -t 24 \ # number of threads for GOOP
-    --process-folder /path_to_query_genomes_folder_in_fasta_format/query \
-    --process-folder-taxid 194 \ # taxid of query
-    --process-folder-go 0005975 \ # outer GO id of interest in query
-    --uniprot-fasta /path_to_uniprot_database_in_fasta_format_for_subject/uniprot_194_proteins.fasta \
-    --uniprot-tsv /path_to_uniprot_tsv_in_fasta_format_for_subject/uniprot_194_proteins_filtered_by_go_0005975.tsv \
+    --subject-genomes-folder /path_to_subject_genomes_folder_in_fasta_format/genomes \
+    --subject-genomes-taxid 194 \
+    --subject-genomes-go 0008150 \
+    --query-genomes-folder /path_to_query_genomes_folder_in_fasta_format/query \
+    --query-genomes-taxid 194 \
+    --query-genomes-go 0008150 \
+    --comparison-go 0044238 \
+    --prodigal /path_to_prodigal_command/prodigal \
+    --makeblastdb /path_to_ncbi_blast_makeblastdb_command/makeblastdb \
+    --blastx /path_to_blastx_command/blastx \
+    --threads 24 \
+    --subject-uniprot-fasta /path_to_uniprot_database_in_fasta_format/uniprot_194_proteins.fasta \
+    --subject-uniprot-tsv /path_to_uniprot_tsv/uniprot_194_proteins_filtered_by_go_0005975.tsv \
+    --query-uniprot-fasta /path_to_uniprot_database_in_fasta_format/uniprot_194_proteins.fasta \
+    --query-uniprot-tsv /path_to_uniprot_tsv/uniprot_194_proteins_filtered_by_go_0005975.tsv \
+    --obo-file /path_to_obo_file/go-basic.obo
+```
+
+1. complete subject folder
+2. complete query folder
+3. local UniProt databases
+
+```bash
+python GOOP.py \
+    --subject-genomes-folder /path_to_subject_genomes_folder_in_fasta_format/genomes \
+    --query-genomes-folder /path_to_query_genomes_folder_in_fasta_format/query \
+    --comparison-go 0044238 \
     --obo-file /path_to_obo_file/go-basic.obo \
-    --process-folder-uniprot-fasta /path_to_uniprot_database_in_fasta_format_for_query/uniprot_194_proteins.fasta \
-    --process-folder-uniprot-tsv /path_to_uniprot_tsv_in_fasta_format_for_query/uniprot_194_proteins_filtered_by_go_0005975.tsv
+    --subject-folder-complete \
+    --query-folder-complete
 ```
 
 ## License
