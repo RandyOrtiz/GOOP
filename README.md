@@ -209,6 +209,10 @@ It's recommended to use a virtual environment to manage the Python packages.
   - `-qf`, `--query-uniprot-fasta`: Path to a local UniProt FASTA file to use instead of downloading
   - `-qv`, `--query-uniprot-tsv`: Path to a local UniProt TSV file to use instead of downloading
   - `-o`, `--obo-file`: Path to a local OBO file to use instead of downloading
+  - `--evalue`: Annotation e-value (default: 1e-10)
+  - `--qcov`: Anotation minimum query coverage (default: 80) %
+  - `--min-seq-id`: Anotation minimum query coverage for MMseqs2 (default: 0.8)
+  - `--sensitivity`: MMseqs2 sensitivity level (default: 8.0) very sensitive
 - Other Optional Modes
   - `--metagenome-subject`: Use this if your subject genomes are metagenome (prodigal -p meta)
   - `--metagenome-query`: Use this if your query genomes are metagenome (prodigal -p meta)
