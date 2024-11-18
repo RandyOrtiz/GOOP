@@ -178,6 +178,37 @@ It's recommended to use a virtual environment to manage the Python packages.
 
 ## Sample Results
 
+- Final_Results_001_query_counts_report.tsv (This should be used to validate final results png)
+  - This file describes all GO Terms that are unique to the Query (and thus completely absent from all Subject)
+    - First Column: GO Terms
+    - Second Column: Count (Number of files in which the GO Term is present)
+    - Third Column: Percentage (Percentage of files in which the GO Term is present)
+    - Fourth Column: Similar GOs (Similar GOs utilizing GO node proximity)
+    - Fifth Column: Similar Strings (Similar GOs utilizing similar strings)
+      
+- Final_Results_001_subject_counts_report.tsv (This should be used to validate final results png)
+  - This file describes all GO Terms that are unique to the Subject (and thus completely absent from all Query)
+    - First Column: GO Terms
+    - Second Column: Count (Number of files in which the GO Term is present)
+    - Third Column: Percentage (Percentage of files in which the GO Term is present)
+    - Fourth Column: Similar GOs (Similar GOs utilizing GO node proximity)
+    - Fifth Column: Similar Strings (Similar GOs utilizing similar strings)
+      
+- GOs_present_in_both_query.csv
+  - GO Terms that are present in both  
+  - First row: GO Terms
+  - Second row: Genome comparison - Query sided
+  - Last row:
+    
+- GOs_present_in_both_subject.csv
+  - GO Terms that are present in both
+  - First row: GO Terms
+  - Second row: Genome comparison - Subject sided
+  - Last row:
+    
+- combined_heatmaps.png
+  - Final results comparison between query and subject (utilize Final_Results csv files to validate these results)
+
 ![image](https://github.com/user-attachments/assets/4389ab9e-dfb1-459c-b0df-f17a15330c2f)
 
 ## Usage
