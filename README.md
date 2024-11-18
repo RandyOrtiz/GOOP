@@ -12,12 +12,6 @@ Gene Ontology (GO) analysis serves as a foundational tool in bioinformatics for 
 7
 8
 9
-10
-11
-12
-13
-14
-15
 
 ## Table of Contents
 
