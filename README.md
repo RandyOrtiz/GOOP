@@ -3,15 +3,20 @@
 **GOOP** is a comprehensive pipeline for downloading, processing, and analyzing genomic data. It automates the steps of genome retrieval, gene prediction, BLAST searches, Gene Ontology (GO) term processing, and visualization through heatmaps.
 
 Gene Ontology (GO) analysis serves as a foundational tool in bioinformatics for interpreting functional differences among organisms by categorizing genes into standardized terms associated with primary metabolic processes, molecular functions, and cellular components. Despite its utility, comparative GO analyses between groups of microorganisms remain computationally intensive due to the lack of streamlined, user-friendly tools. Here, we introduce Gene Ontology Overlap Profiler (GOOP), a novel bioinformatics pipeline designed to facilitate the comparison of GO term distributions between two groups of microorganisms. GOOP automates the extraction, normalization, comparison, and visualization of GO terms directly from Bacterial and Viral Bioinformatics Resource Center (BV-BRC) data tables and local genome datasets, providing a cohesive workflow for detecting functional divergences. Key features of GOOP include customizable GO term filtering, integration of comprehensive statistical analyses for identifying significantly enriched or depleted GO categories, and the generation of detailed reports accompanied by an informative heatmap-like graphic. 
-1
-2
-3
-4
-5
-6
-7
-8
-9
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 9
+- 0
+- 1
+- 2
+- 3
+- 4
 
 ## Table of Contents
 
